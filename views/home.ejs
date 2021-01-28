@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<title>Mapstreak</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+ 
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card ">
+   
+    <a href="#home" class="w3-bar-item w3-button " ><img src="Images/logo.png" id="logo"><b>Mapstrik</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small text-right" id="nav-menu">
+      <a href="#projects" class="w3-bar-item w3-button">Home</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="#" class="w3-bar-item w3-button">Login</a>
+    </div>
+  </div>
+</div>
+
+
+<!--countdown-->
+<div class="page">
+  <div class="countdown-col col">
+    <div class="time middle">
+      <span>
+        <div id="d">12</div>
+        Days
+      </span>
+      <span>
+        <div id="h">06</div>
+        Hours
+      </span>
+      <span>
+        <div id="m">35</div>
+        Minutes
+      </span>
+      <span>
+        <div id="s">54</div>
+        Seconds
+      </span>
+    </div>
+  </div>
+  <div class="newsletter-col col">
+    <div class="newsletter middle">
+      <h2>We Are Launching Soon</h2>
+      <h4>Subscribe to get notification when we start</h4>
+      <form action="">
+        <input type="text" placeholder="Enter Your Email">
+        <input class="newsletter-btn" type="button" value="Subscribe">
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  var comingdate = new Date("feb , 2021 00:00:00");
+
+var d = document.getElementById('d');
+var h = document.getElementById('h');
+var m = document.getElementById('m');
+var s = document.getElementById('s');
+
+var x = setInterval(function(){
+  var now = new Date();
+  var des = comingdate.getTime() - now.getTime();
+  var days = Math.floor(des/(1000 * 60 * 60 * 24));
+  var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
+  var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
+  var secs = Math.floor(des%(1000 * 60) / 1000);
+
+  d.innerHTML = getTrueNumber(days);
+  h.innerHTML = getTrueNumber(hours);
+  m.innerHTML = getTrueNumber(mins);
+  s.innerHTML = getTrueNumber(secs);
+
+  if(des <= 0) clearInterval(x);
+
+},1000);
+
+function getTrueNumber(x) {
+  if (x<10) return '0'+x;
+  else return x;
+}
+</script>
+
+<div class="container-fluid">
+  <div class=" col-12 text-center" id="about-us-sec1">
+   <h1>About us</h1>
+   <h4>Mapstreak is a company that provides all services like tiffin, food delivery, salon, beauty and spa, carpenter, plumber, electrician, medicine, and many more at affordable costs from the comfort of your home.
+  </h4>
+  </div>
+</div>
+
+<!-- sample -->
+<div class="container">
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="Images/preview-img1.png" alt="Card image cap">
+    <div class="card-body text-center" id="card-span">
+      <h5 class="card-title">Order Tiffin</h5>
+      <button class="w3-button w3-black w3-section" type="submit">
+        View more
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="Images/preview-img2.png" alt="Card image cap">
+    <div class="card-body text-center" id="card-span">
+      <h5 class="card-title text-center">Food delivery </h5>
+      <button class="w3-button w3-black w3-section" type="submit">
+        View more
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="Images/preview-img3.png" alt="Card image cap">
+    <div class="card-body text-center" id="card-span">
+      <h5 class="card-title text-center">Beauty</h5>
+      <button class="w3-button w3-black w3-section" type="submit">
+        View more
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Join with us</h3>
+    <p>Lets get in touch and talk about your next project.</p>
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>
+  
+<!-- End page content -->
+
+<!-- Footer -->
+
+<footer class="w3-center w3-dark w3-padding-16" id="footer">
+  <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+    <div class="container text-center text-md-left">
+    <div class="row">
+    <div class="col-md-3 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+        <h3 class="font-weight-bold text-uppercase mb-4">Mapstreak</h3>
+        <ul class="list-unstyled">
+          <li><h4>We provide a compleate solution to all your needs, To join with us in this venture do contact us.</h4></li>
+        </ul>
+
+      </div>
+      <hr class="clearfix w-100 d-md-none">
+      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+        <h3 class="font-weight-bold text-uppercase mb-4">About us</h3>
+        <div class="about-us">
+        <ul class="list-unstyled">
+          <li><p>Who we are</p></li>
+          <li><p>Add resturents</p></li>
+          <li><p>Deliver</p></li>
+          <li><p>Contact us</p></li>
+        </ul>
+    </div>
+      </div>
+      <hr class="clearfix w-100 d-md-none">
+      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">   
+        <h3 class="font-weight-bold text-uppercase mb-4">Address</h3>
+        <ul class="list-unstyled">
+          <li><p><i class="fa fa-home" aria-hidden="true"></i> New York, NY 10012, US</p>
+          </li>
+          <li><p><i class="fa fa-envelope" aria-hidden="true"></i></i> info@example.com</p>
+          </li>
+          <li><p><i class="fa fa-phone-square" aria-hidden="true"></i> + 91 8484020850</p>
+          </li>
+          <li><p><i class="fa fa-phone-square" aria-hidden="true"></i>+ 01 xxxxxxxxxx</p>
+          </li>
+        </ul>
+      </div>
+      
+      <hr class="clearfix w-100 d-md-none">
+      
+      <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social-icons">
+        <h3 class="font-weight-bold text-uppercase ">Connect </h3>
+        <ul class="list-unstyled">
+          <li><a href="#"><span style="font-size: 3em; color: rgb(0, 0, 0);"><i class="fab fa-facebook-square"></i></span></p></a>
+          </li>
+          <li><a href="#"><p><span style="font-size: 3em; color: rgb(0, 0, 0);"><i class="fab fa-whatsapp"></i></span></p></a>
+          </li>    
+        </ul>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="footer-copyright text-center py-3" id="copyrights" >© 2021 Copyright: Mapstreak Flyseas Private Limited
+  </div>
+</footer>
+
+</body>
+</html>
