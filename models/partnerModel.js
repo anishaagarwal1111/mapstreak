@@ -3,45 +3,48 @@ const mongoose = require('mongoose');
 const partnerSchema = new mongoose.Schema
 ({
     outletName : {
-        type: 'String',
+        type: String,
         required: true
     },
     state: {
-        type: 'String'
+        type: String
     },
     city: {
-        type: 'String'
+        type: String
     },
     primary_location: {
-        type: 'String'
+        type: String
     },
     pincode : {
-        type: 'Number'
+        type: Number
     },
-    outlet_type: {
-        value1: { type: Boolean, required: true, default: true },
-        value2: { type: Boolean, required: true, default: true },
-        value2: { type: Boolean, required: true, default: true }
-    },
+    // outlet_type: {
+    //     value1: { type: Boolean, required: true, default:true  },
+    //     value2: { type: Boolean, required: true, default:true  },
+    //     value2: { type: Boolean, required: true, default:true  }
+    // },
     contact_person: {
-        type: 'String'
+        type: String
     },
     name :{
-        type: 'String'
+        type: String
     },
     phone_no : {
-        type: 'Number'
+        type: Number
     },
-    type_of_cusines :{
-        value1: { type: Boolean, required: true, default: true },
-        value2: { type: Boolean, required: true, default: true },
-        value2: { type: Boolean, required: true, default: true }
-    },
-    time : {
-        type : 'Number'
-    },
+    // type_of_cusines :{
+    //     value1: { type: Boolean, required: true, default:true  },
+    //     value2: { type: Boolean, required: true, default:true   },
+    //     value2: { type: Boolean, required: true, default:true  }
+    // },
+    // time : {
+    //     type : Number
+    // },
+    image: {    
+        type: String
+    }
 });
 
-const Partner = mongoose.model('Partner', userSchema);
+const Partner = mongoose.model('Partner', partnerSchema);
 
 module.exports = Partner;

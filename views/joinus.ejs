@@ -6,125 +6,125 @@
   </div>
 
  <div class="container"> 
-  <form>
+  <form action='/partnerwithus' method="post" role="form" enctype="multipart/form-data">
     <div class="form-group row">
       <label for="Outlet" class="col-sm-2 col-form-label">Outlet name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="Outlet name" required>
+        <input type="text" class="form-control" placeholder="Outlet name" name="outletName" required>
       </div>
     </div>
     <div class="form-group row">
         <label for="State" class="col-sm-2 col-form-label">State</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="State" required>
+          <input type="text" class="form-control" placeholder="State"  name="state" required>
         </div>
       </div>
     <div class="form-group row">
         <label for="City" class="col-sm-2 col-form-label">City</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="City" required>
+          <input type="text" class="form-control" placeholder="City" name="city" required>
         </div>
       </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Primary location</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Primary location" required>
+          <input type="text" class="form-control" placeholder="Primary location" name="primary_location" required>
         </div>
       </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Pincode</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" placeholder="Pincode" required>
+          <input type="number" class="form-control" placeholder="Pincode" name="pincode" required>
         </div>
       </div>
-    <div class="form-group row">
+    <!-- <div class="form-group row">
         <div class="col-sm-2">Outlet type</div>
         <div class="col-sm-10">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" name="outlettype">
             <label class="form-check-label" for="gridCheck1">
               Cloud kitchen
             </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <input class="form-check-input" type="checkbox" id="gridCheck1" name="outletName">
               <label class="form-check-label" for="gridCheck1">
                 Resturent
               </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" name= "outletName">
                 <label class="form-check-label" for="gridCheck1">
                   Others
                 </label>
                 <input type="text" class="form-control" placeholder="Please specify">
               </div>
         </div>
-      </div>
+      </div> -->
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Contact person</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Owner/Manager" required>
+          <input type="text" class="form-control" placeholder="Owner/Manager" required name="contactperson">
         </div>
       </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Name" required>
+          <input type="text" class="form-control" placeholder="Name" name="name" required>
         </div>
       </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Phone no.</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" placeholder="Phone no." required>
+          <input type="number" class="form-control" placeholder="Phone no." name="phone_no" required>
         </div>
       </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Type of Cusines</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Chinese,Punjabi,Bangali,etc." required>
+          <input type="text" class="form-control" placeholder="Chinese,Punjabi,Bangali,etc." name="type" required>
         </div>
       </div>
-      <div class="form-group row">
+      <!-- <div class="form-group row">
         <div class="col-sm-2">Services</div>
         <div class="col-sm-10">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" name= "outletName">
             <label class="form-check-label" for="gridCheck1">
              delivery
             </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <input class="form-check-input" type="checkbox" id="gridCheck1" name= "outletName">
               <label class="form-check-label" for="gridCheck1">
                 Walk in!
               </label>
             </div>
         </div>
-      </div>
-    <div class="form-group row">
+      </div> -->
+    <!-- <div class="form-group row">
         <label class="col-sm-2 col-form-label">Time</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" placeholder="From" required>
+            <input type="text" class="form-control" placeholder="From" name="time" required>
           </div>
           <div class="col-sm-5">
-            <input type="text" class="form-control" placeholder="To" required>
+            <input type="text" class="form-control" placeholder="To" name="time" required>
           </div>
-      </div>
+      </div> -->
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">upload menue image</label>
       <div class="custom-file col-sm-5">        
-        <input type="file" class="custom-file-input " id="customFile" required>
+        <input type="file" class="custom-file-input " id="customFile" name="image" required>
         <label class="custom-file-label" for="customFile">Upload menue</label>
       </div>
     </div>  
-    <div class="form-group row">
+    <!-- <div class="form-group row">
         <label class="col-sm-2 col-form-label">upload Licence image</label>
         <div class="custom-file col-sm-5">        
           <input type="file" class="custom-file-input " id="customFile" required>
           <label class="custom-file-label" for="customFile">Upload Licence</label>
         </div>
-      </div>
+      </div> -->
     <div class="form-group row">
        <div class="col-sm-10">
          <button class="w3-button w3-black w3-section" type="submit">
@@ -135,5 +135,41 @@
     
   </form>
 </div>
+
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async(e)=>{
+    e.preventDefault();
+    const outletName = form.outletName.value;
+    const state = form.state.value;
+    const city = form.city.value;
+    const primary_location = form.primary_location.value;
+    const pincode = form.pincode.value;
+    const contactperson = form.contactperson.value;
+    const name = form.name.value;
+    const type = form.type.value;
+    const phone_no = form.phone_no.value;
+    const image = form.image.value;
+    try{
+      const res = await fetch('/partnerwithus', {
+        method: 'POST',
+        body: JSON.stringify({outletName, state, city, primary_location, pincode, contactperson,name, type, phone_no, image}),
+        headers: {'Content-Type': 'application/json'}
+      });
+      const data = await res.json();
+      console.log(data);
+      // if(data){
+      //   location.assign('/');
+      // }
+      // else{
+      //   console.log('Error occured');
+      // }
+    }
+    catch(err){
+      console.log(err);
+    }
+  });
+</script>
+
 
 <%- include('partials/footer'); -%>
