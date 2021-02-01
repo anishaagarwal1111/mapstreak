@@ -40,7 +40,7 @@ const partnerSchema = new mongoose.Schema
     // time : {
     //     type : Number
     // },
-    image: {    
+    image: {
         type: String
     }
 });
