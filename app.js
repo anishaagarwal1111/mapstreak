@@ -20,6 +20,14 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
+app.get('/aboutus',(req,res) => {
+    res.render('aboutus');
+});
+
+app.get('/contactus',(req,res) => {
+    res.render('contactus');
+});
+
 PORT = process.env.PORT;
 
 app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`));

@@ -89,13 +89,13 @@ max-height: 620px;
   margin-bottom: 30px;
 }
 #cards{
-border: none !important;
+overflow: hidden;
 }
 #card-span{
 max-height: 40px;
 overflow:hidden;
 border: none;
-margin-top: 2px;
+margin: 5px;
 }
 #joinus{
 background-color: whitesmoke;
@@ -108,7 +108,6 @@ border-radius: 22px;
 }
 #footer{
 background-color:whitesmoke;
-
 }
 #copyrights a{
 text-decoration: none;

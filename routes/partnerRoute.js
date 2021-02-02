@@ -42,7 +42,8 @@ router.post('/partnerwithus',upload.single('image'), (req,res)=>{
                             walkin: req.body.services2 ? true : false,
                         },
                         specify: req.body.specify,
-                        time: req.body.time,
+                        time_from: req.body.time_from,
+                        time_to: req.body.time_to,
                         image: req.file.filename
     }
 

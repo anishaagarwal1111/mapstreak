@@ -45,8 +45,11 @@ const partnerSchema = new mongoose.Schema
     specify:{
         type: String
     },
-    time : {
-        type : Number
+    time_from: {
+        type : String
+    },
+    time_to: {
+    type: String
     },
     image: {
        type: String
