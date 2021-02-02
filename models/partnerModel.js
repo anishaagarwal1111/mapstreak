@@ -18,11 +18,12 @@ const partnerSchema = new mongoose.Schema
     pincode : {
         type: Number
     },
-    // outlet_type: {
-    //     value1: { type: Boolean, required: true, default:true  },
-    //     value2: { type: Boolean, required: true, default:true  },
-    //     value2: { type: Boolean, required: true, default:true  }
-    // },
+    outlettype: {
+        Cloud_kitchen: { type: Boolean,requird: true},
+        Resturent: { type: Boolean,requird: true},
+        others: { type: Boolean,requird: true}
+        
+    },
     contact_person: {
         type: String
     },
@@ -32,16 +33,23 @@ const partnerSchema = new mongoose.Schema
     phone_no : {
         type: Number
     },
-    // type_of_cusines :{
-    //     value1: { type: Boolean, required: true, default:true  },
-    //     value2: { type: Boolean, required: true, default:true   },
-    //     value2: { type: Boolean, required: true, default:true  }
-    // },
-    // time : {
-    //     type : Number
-    // },
-    image: {
+    type_of_cusines :{
+       type: String
+    },
+    services: {
+        // deleviery: { type: Boolean, required: true,default:false},
+        // walkin: { type: Boolean, required: true,default:false}
+        delivery: {type: Boolean,required:true},
+        walkin: {type: Boolean,required:true}
+    },
+    specify:{
         type: String
+    },
+    time : {
+        type : Number
+    },
+    image: {
+       type: String
     }
 });
 

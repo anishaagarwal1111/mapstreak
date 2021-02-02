@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(partnerRoute);
 app.set("view engine", "ejs");
 
+app.get('/', (req, res) => {
+  res.render('home');
+});
+
 PORT = process.env.PORT;
 
 app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`));
