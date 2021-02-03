@@ -28,6 +28,10 @@ app.get('/contactus',(req,res) => {
     res.render('contactus');
 });
 
+app.get('/submitted', (req,res)=>{
+  res.render('submitted');
+});
+
 PORT = process.env.PORT;
 
 app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`));
