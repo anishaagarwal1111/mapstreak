@@ -21,7 +21,7 @@ module.exports.post_signup = async(req,res)=>
 {
   const {full_name,address,mobile_no,email,password}=req.body;
   try{
-       const user=await User.create({full_name,address,email,password,mobile_no});
+       const user=await User.createToken({full_name,address,email,password,mobile_no});
        const token =Token(user._id);
        res.cookie('jwt',token,{ httpOnly: true, maxAge: maxAge * 1000 })
        if(user){
