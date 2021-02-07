@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BaljitThakur/mapstreak#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "busboy": "^0.3.1",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
@@ -29,6 +30,7 @@
     "nodemailer": "^6.4.17",
     "nodemon": "^2.0.7",
     "packages": "0.0.8",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "validator": "^13.5.2"
   }
 }

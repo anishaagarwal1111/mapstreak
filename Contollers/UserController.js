@@ -9,8 +9,38 @@ const createToken = (id) => {
     expiresIn: maxAge,
     });
 };
-//signup
+//error handling
+//error handling
+const handleErrors = (err) => {
+  console.log(err.message, err.code);
+  let errors = { email: '', password: ''};
 
+  if (err.code === 11000) {
+          errors.email = 'that email is already registered';
+      return errors;
+  }
+
+  if(err.message === "invalid Email id"){
+    errors.employe_id = "Please enter a valid Email ID";
+   
+  }
+
+  if(err.message === "incorrect password"){
+    errors.password = "Password is incorrect";
+    
+  }
+
+
+  if (err.message.includes('user validation failed')) {
+    Object.values(err.errors).forEach(({ properties }) => {
+      errors[properties.path] = properties.message;
+    });
+  }
+return errors;
+}
+
+
+//signup
 module.exports.get_signup = async (req,res)=>
 {
   res.render('signup');
@@ -43,8 +73,8 @@ module.exports.post_signup = async(req,res)=>
     }
     catch(err)
     {
-      console.log(err);
-      res.status(400);
+      const errors = handleErrors(err);
+      res.status(400).json({errors});
     }
  
 }
@@ -69,7 +99,7 @@ module.exports.post_login = async (req,res) => {
        });  
       }
         catch(err){
-            const errors = handleErrors(err);
-            res.status(400).json({errors});
+          const errors = handleErrors(err);
+          res.status(400).json({errors});
         }
   }

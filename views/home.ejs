@@ -1,118 +1,243 @@
-
 <%- include('partials/header'); -%>
+    <main>
 
-<!--countdown-->
-<div class="page">
-  <div class="countdown-col col">
-    <div class="time middle">
-      <span>
-        <div id="d">12</div>
-        Days
-      </span>
-      <span>
-        <div id="h">06</div>
-        Hours
-      </span>
-      <span>
-        <div id="m">35</div>
-        Minutes
-      </span>
-      <span>
-        <div id="s">54</div>
-        Seconds
-      </span>
-    </div>
-  </div>
-  <div class="newsletter-col col">
-    <div class="newsletter middle">
-      <h2>We Are Launching Soon</h2>
-      <h4>Subscribe to get notification when we start</h4>
-      <form action="">
-        <input type="text" placeholder="Enter Your Email">
-        <input class="newsletter-btn" type="button" value="Subscribe">
-      </form>
-    </div>
-  </div>
-</div>
-<script>
-  var comingdate = new Date("feb , 2021 00:00:00");
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-9 col-md-10">
+                                <div class="hero__caption">
+                                    <div class="row time middle" style="margin:10px">
+                                        <span style="height: 100px;width: 70px;">
+                                        <h2>
+                                          <div id="d">20</div>
+                                        </h2>
+                                          Days
+                                        
+                                        </span>
+                                        <span style="height: 100px;width: 70px;">
+                                          <h2>
+                                          <div id="h">06</div>
+                                          </h2>
+                                          Hours
+                                        </span>
+                                        <span style="height: 100px;width: 70px;">
+                                          <h2>
+                                          <div id="m">35</div>
+                                          </h2>
+                                          Minutes
+                                        </span>
+                                        <span style="height: 100px;width: 70px;">
+                                          <h2>
+                                          <div id="s">54</div></h2>
+                                          Seconds
+                                          
+                                        </span>
+                                      </div>
+                                      <script src="countdown.js"></script>
+                                    <h1>We Are Launching Soon</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Search Box -->
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <!-- form -->
+                                <form action="#" class="search-box">
+                                    
+                                    <div class="search-form">
+                                        <a href="form.html">ADD</a>
+                                    </div>	
+                                </form>	
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+        <!-- Our Services Start -->
+        
+        <!-- How  Apply Process End-->
+        <!-- Testimonial Start -->
+       
+        <!-- Testimonial End -->
+         <!-- Support Company Start-->
 
-var d = document.getElementById('d');
-var h = document.getElementById('h');
-var m = document.getElementById('m');
-var s = document.getElementById('s');
+    </main>
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-bg footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                       <div class="single-footer-caption mb-50">
+                         <div class="single-footer-caption mb-30">
+                             <div class="footer-tittle">
+                                 <h4>About Us</h4>
+                                 <div class="footer-pera">
+                                     <p>Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so behold.</p>
+                                </div>
+                             </div>
+                         </div>
 
-var x = setInterval(function(){
-  var now = new Date();
-  var des = comingdate.getTime() - now.getTime();
-  var days = Math.floor(des/(1000 * 60 * 60 * 24));
-  var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
-  var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
-  var secs = Math.floor(des%(1000 * 60) / 1000);
+                       </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Blogs</h4>
+                                <ul>
+                                    <li><a href="#">Blog 1</a>
+                                    </li>
+                                    <li><a href="#">Blog 2</a></li>
+                                    <li><a href="#">Blog 3</a></li>
+                                </ul>
+                            </div>
 
-  d.innerHTML = getTrueNumber(days);
-  h.innerHTML = getTrueNumber(hours);
-  m.innerHTML = getTrueNumber(mins);
-  s.innerHTML = getTrueNumber(secs);
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Important Link</h4>
+                                <ul>
+                                    <li><a href="terms&condition.html"> Terms & conditions</a></li>
+                                    <li><a href="privacy_policy.html"> Privacy policy</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="#">Support</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Newsletter</h4>
+                                <div class="footer-pera footer-pera2">
+                                 <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
+                             </div>
+                             <!-- Form -->
+                             <div class="footer-form" >
+                                 <div id="mc_embed_signup">
+                                     <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                     method="get" class="subscribe_form relative mail_part">
+                                         <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                         class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                         onblur="this.placeholder = ' Email Address '">
+                                         <div class="form-icon">
+                                             <button type="submit" name="submit" id="newsletter-submit"
+                                             class="email_icon newsletter-submit button-contactForm"><img src="assets/img/icon/form.png" alt=""></button>
+                                         </div>
+                                         <div class="mt-10 info"></div>
+                                     </form>
+                                 </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <!--  -->
+               <div class="row justify-content-between">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="text-center">
+                        <span style="font-size: 2em; color: rgb(255, 255, 255); padding-right: 20px;"><a href="#"><i class="fab fa-facebook-f"></i></a></span>
+                        <span style="font-size: 2em; color: rgb(255, 255, 255); padding-right: 20px;"><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span style="font-size: 2em; color: rgb(255, 255, 255); padding-right: 20px;"><a href="#"><i class="fab fa-linkedin-in"></i></a></span>
+                        <span style="font-size: 2em; color: rgb(255, 255, 255); padding-right: 20px;"><a href="#"><i class="fab fa-instagram"></i></a></span>
+                        <span style="font-size: 2em; color: rgb(255, 255, 255); padding-right: 20px;"><a href="#"><i class="fab fa-youtube"></i></a></span>
+                    </div>
+                </div>
+               </div>
+               <div class="row footer-wejed justify-content-between">
+                       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                          <!-- logo -->
+                          <div class="footer-logo mb-20">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="" widht="100px" height="50px"></a>
+                          </div>
+                       </div>
+                       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="footer-tittle-bottom">
+                            <span>5000+</span>
+                            <p>Talented Hunter</p>
+                        </div>
+                       </div>
+                       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <div class="footer-tittle-bottom">
+                                <span>451</span>
+                                <p>Talented Hunter</p>
+                            </div>
+                       </div>
+                       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <!-- Footer Bottom Tittle -->
+                            <div class="footer-tittle-bottom">
+                                <span>568</span>
+                                <p>Talented Hunter</p>
+                            </div>
+                       </div>
+               </div>
+            </div>
+        </div>
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area footer-bg">
+            <div class="container">
+                <div class="footer-border">
+                     <div class="row d-flex justify-content-between align-items-center">
+                         <div class="col-xl-10 col-lg-10 ">
+                             <div class="footer-copy-right">
+                                 <p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<a href="about.html" target="_blank">Mapstreak</a>  </p>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
 
-  if(des <= 0) clearInterval(x);
 
-},1000);
+  <!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
 
-function getTrueNumber(x) {
-  if (x<10) return '0'+x;
-  else return x;
-}
-</script>
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <script src="./assets/js/price_rangs.js"></script>
+        
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
 
-
-<!-- sample -->
-<div class="container-fluid">
-  <div class=" col-12 text-center" id="about-us-sec1">
-   <h1>About us</h1>
-   <h5>Mapstreak is a company that provides all services like tiffin, food delivery, salon, beauty and spa, carpenter, plumber, electrician, medicine, and many more at affordable costs from the comfort of your home.
-  </h5>
-  </div>
-</div>
-
-<!-- sample -->
-<div class="container ">
-<div class="card-deck">
-  <div class="card" id="cards">
-    <img class="card-img-top" src="Images/preview-img1.png" alt="Card image cap">
-    <div id="card-span">
-      <h5 class="card-text text-left">Order Tiffin</h5>
-    </div>
-  </div>
-  <div class="card" id="cards">
-    <img class="card-img-top" src="Images/preview-img2.png" alt="Card image cap">
-    <div id="card-span">
-      <h5 class="card-title text-left">Food delivery </h5>
-    </div>
-  </div>
-  <div class="card" id="cards">
-    <img class="card-img-top" src="Images/preview-img3.png" alt="Card image cap">
-    <div id="card-span">
-      <h6 class="card-title text-left">This could be Your services</h6>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="container-fluid" id="joinus">
-  <div>
-   <h2 ><b>Partnership with us and add your services here</b></h2>
-   <a href="/partnerwithus"><button class="w3-button w3-black w3-border-round w3-section button1" type="submit">
-    <i class="fa fa-paper-plane"></i> Join us
-   </button></a>
-  </div>
-</div>
-
-<!-- End page content -->
-
-<!-- Footer -->
-
-<%- include('partials/footer'); -%>
-
-</body>
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
 </html>
+        
+    

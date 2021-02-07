@@ -9,6 +9,8 @@ const UserRoute=require('./routes/UserRoute');
 
 
 
+
+
 dotenv.config();
 connectDB();
 var app = express()
@@ -17,6 +19,7 @@ app.use(express.json());
 
 // app.use(partnerRoute);
 app.use(UserRoute);
+app.use(partnerRoute);
 app.set("view engine", "ejs");
 
 
@@ -37,9 +40,20 @@ app.get('/submitted', (req,res)=>{
   res.render('submitted');
 });
 
+
+app.get('/privacypolicy',(req,res) => {
+ res.render('privacy_policy');
+});
+
+app.get('/termsandconditions', (req,res) => {
+  res.render('terms_and_conditions');
+});
+
 app.get('/tiffinservices', (req,res) => {
   res.json(tiffinServices);
 })
+
+
 
 PORT = process.env.PORT;
 
