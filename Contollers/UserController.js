@@ -21,7 +21,7 @@ const handleErrors = (err) => {
   }
 
   if(err.message === "invalid Email id"){
-    errors.employe_id = "Please enter a valid Email ID";
+    errors.email = "Invalid Email ID";
    
   }
 
@@ -31,7 +31,7 @@ const handleErrors = (err) => {
   }
 
 
-  if (err.message.includes('user validation failed')) {
+  if (err.message.includes('User validation failed')) {
     Object.values(err.errors).forEach(({ properties }) => {
       errors[properties.path] = properties.message;
     });
@@ -41,26 +41,19 @@ return errors;
 
 
 //signup
-module.exports.get_signup = async (req,res)=>
-{
-  res.render('signup');
-}
-
 
 module.exports.post_signup = async(req,res)=>
 {
-  const {full_name,address,mobile_no,email,password}=req.body;
+  const {name,email,password}=req.body;
   try{
-       const user=await User.create({full_name,address,email,password,mobile_no});
+       const user=await User.create({name,email,password});
        const token =createToken(user._id);
        res.cookie('jwt',token,{ httpOnly: true, maxAge: maxAge * 1000 })
        if(user){
          res.status(201);
          res.json({
            _id:user._id,
-           full_name:user.full_name,
-           address: user.organisation_name,
-           mobile_no:user.mobile_no,
+           name:user.name,
            password:user.password,
            email:user.email,   
          });
@@ -90,7 +83,7 @@ module.exports.post_login = async (req,res) => {
     const {email, password} = req.body;
     try{
       const user = await User.login(email,password);
-      const token = createToken(email);
+      const token = createToken(user._id);
       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000});
        res.status(201).json({
          _id : user._id,
