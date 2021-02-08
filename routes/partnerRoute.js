@@ -44,7 +44,7 @@ router.post('/partnerwithus',(req,res) => {
                                             Resturent: req.body.outlettype2 ? true : false,
                                             others: req.body.outlettype3 ? true : false,
                                         },
-                                        contact_person:req.body.contact_person,
+                                        contact_person:req.body.contactperson,
                                         name:req.body.name,
                                         phone_no: req.body.phone_no,
                                         type_of_cusines: req.body.type_of_cusines,
@@ -85,7 +85,7 @@ router.post('/partnerwithus',(req,res) => {
                       <li>City: ${req.body.city}</li>
                       <li>Primary Location: ${req.body.primary_location}</li>
                       <li>Pincode: ${req.body.pincode}</li>
-                      <li>Contact Person: ${req.body.contact_person}</li>
+                      <li>Contact Person: ${req.body.contactperson}</li>
                       <li>Name: ${req.body.name}</li>
                       <li>Phone Number: ${req.body.phone_no}</li>
                       <li>Type Of Cusines: ${req.body.type_of_cusines}</li>
