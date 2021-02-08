@@ -6,7 +6,8 @@ var Partner = require('./models/partnerModel');
 const partnerRoute = require('./routes/partnerRoute');
 var mongoose = require('mongoose');
 const UserRoute=require('./routes/UserRoute');
-
+const MerchantRoute=require('./routes/MerchantRoute');
+var Merchant=require('./models/merchantModel')
 
 
 
@@ -17,9 +18,10 @@ var app = express()
 app.use(express.static('public'));
 app.use(express.json());
 
-// app.use(partnerRoute);
+app.use(partnerRoute);
 app.use(UserRoute);
 app.use(partnerRoute);
+app.use(MerchantRoute);
 app.set("view engine", "ejs");
 
 
