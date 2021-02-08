@@ -1,6 +1,8 @@
 
 const jwt = require('jsonwebtoken');
 const Merchant = require('../models/merchantModel');
+const nodemailer = require('nodemailer');
+
 
 //create token
 const maxAge = 1 * 24 * 60 * 60 * 1000;
@@ -65,8 +67,53 @@ module.exports.merchant_post_signup = async(req,res)=>
            confirmPassword:merchant.confirmPassword,
            email:merchant.email,   
          });
-       }
 
+         var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: process.env.USER,
+              pass: process.env.PASS
+            }
+          });
+          
+          const output = `
+                <p>You have a new contact request</p>
+                <h3>Contact Details</h3>
+                <ul>  
+                  <li> Name: ${req.body.full_name}</li>
+                  <li>Address: ${req.body.address}</li>
+                  <li>Mobile Number: ${req.body.mobile_no}</li>
+                  <li>Email: ${req.body.email}</li>
+                </ul>
+              `;
+
+          var mailOptions = {
+            from: req.body.email,
+            to: process.env.USER,
+            subject:'Adding services request',
+            text:'mail',
+            html: output,
+            attachments: [
+              {
+               path: path
+              }
+           ]
+          };
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+              fs.unlink(path,function(err){
+                if(err){
+                    return res.end(err)
+                }else{
+                    console.log("deleted")
+                }
+              })
+            }
+          });
+    }
        else{
         res.status(400);
         throw new Error ('Invalid details');   
