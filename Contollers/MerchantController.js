@@ -58,15 +58,15 @@ module.exports.merchant_post_signup = async(req,res)=>
        res.cookie('jwt',token,{ httpOnly: true, maxAge: maxAge * 1000 })
        if(merchant){
          res.status(201);
-         res.json({
-           _id:merchant._id,
-           full_name:merchant.full_name,
-           address: merchant.organisation_name,
-           mobile_no:merchant.mobile_no,
-           password:merchant.password,
-           confirmPassword:merchant.confirmPassword,
-           email:merchant.email,   
-         });
+        //  res.json({
+        //    _id:merchant._id,
+        //    full_name:merchant.full_name,
+        //    address: merchant.organisation_name,
+        //    mobile_no:merchant.mobile_no,
+        //    password:merchant.password,
+        //    confirmPassword:merchant.confirmPassword,
+        //    email:merchant.email,   
+        //  });
 
          var transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -88,29 +88,17 @@ module.exports.merchant_post_signup = async(req,res)=>
               `;
 
           var mailOptions = {
-            from: req.body.email,
+            from:  '"Div" <div@gmail.com> ',
             to: process.env.USER,
             subject:'Adding services request',
             text:'mail',
             html: output,
-            attachments: [
-              {
-               path: path
-              }
-           ]
           };
           transporter.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log(error);
             } else {
               console.log('Email sent: ' + info.response);
-              fs.unlink(path,function(err){
-                if(err){
-                    return res.end(err)
-                }else{
-                    console.log("deleted")
-                }
-              })
             }
           });
     }
