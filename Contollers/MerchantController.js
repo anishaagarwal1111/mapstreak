@@ -73,7 +73,7 @@ module.exports.merchant_post_signup = async(req,res)=>
             auth: {
               user: process.env.USER,
               pass: process.env.PASS
-            }
+            },
           });
           
           const output = `
@@ -88,8 +88,8 @@ module.exports.merchant_post_signup = async(req,res)=>
               `;
 
           var mailOptions = {
-            from:  '"Div" <div@gmail.com> ',
-            to: process.env.USER,
+            from:   'divyashasinha23@gmail.com',
+            to: 'divyashasinha23@gmail.com',
             subject:'Adding services request',
             text:'mail',
             html: output,

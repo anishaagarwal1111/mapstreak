@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const authRequire = async (req,res,next) => {
+const requireAuth = async (req,res,next) => {
     const token = req.cookies.jwt;
 
 // json web token is verified
@@ -20,5 +20,5 @@ else{
 }
 }
 
-module.exports = authRequire;
+module.exports = requireAuth;
 

@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 const UserRoute=require('./routes/UserRoute');
 const MerchantRoute=require('./routes/MerchantRoute');
 var Merchant=require('./models/merchantModel')
+var requireAuth = require('./Middleware/MerchantMiddleware');
 
 
 
@@ -53,6 +54,10 @@ app.get('/termsandconditions', (req,res) => {
 
 app.get('/tiffinservices', (req,res) => {
   res.json(tiffinServices);
+})
+
+app.get('/partnerwithus', requireAuth, (req,res) => {
+  res.render('joinus');
 })
 
 
