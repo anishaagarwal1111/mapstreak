@@ -45,7 +45,7 @@ return errors;
 //signup
 module.exports.merchant_get_signup = async (req,res)=>
 {
-  res.render('joinus');
+  res.render('merchant_signup');
 }
 
 
@@ -126,7 +126,7 @@ module.exports.merchant_get_login = async(req,res) => {
 module.exports.merchant_post_login = async (req,res) => {
     const {email, password} = req.body;
     try{
-      const user = await User.login(email,password);
+      const Merchant = await Merchant.login(email,password);
       const token = createToken(email);
       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000});
        res.status(201).json({

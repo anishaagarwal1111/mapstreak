@@ -57,7 +57,7 @@ app.get('/tiffinservices', (req,res) => {
 })
 
 app.get('/partnerwithus', requireAuth, (req,res) => {
-  res.render('joinus');
+  res.render('joinuspartner');
 })
 
 

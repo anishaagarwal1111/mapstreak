@@ -24,8 +24,6 @@ var Storage= multer.diskStorage({
     storage:Storage
   }).single('image');
 
-router.get('/partnerwithus', partnercontroller.partner_get);
-
 
 router.post('/partnerwithus',(req,res) => {
     upload(req,res,function(err){

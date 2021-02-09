@@ -1,0 +1,142 @@
+<%- include('partials/partnerhead'); -%>
+
+<div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 text-center">Partnership with us</h3>
+    <p>*Please fill the form below to add your services</p>
+  </div>
+
+ <div class="container"> 
+  <form action='/partnerwithus' method="post" role="form" enctype="multipart/form-data">
+    <div class="form-group row">
+      <label for="Outlet" class="col-sm-2 col-form-label">Outlet name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Outlet name" name="outletName" required>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="State" class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="State"  name="state" required>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label for="City" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="City" name="city" required>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Primary location</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Primary location" name="primary_location" required>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Pincode</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" placeholder="Pincode" name="pincode" required>
+        </div>
+      </div>
+    <div class="form-group row">
+        <div class="col-sm-2">Outlet type</div>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" name="outlettype1">
+            <label class="form-check-label" for="gridCheck1">
+              Cloud kitchen
+            </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1" name="outlettype2">
+              <label class="form-check-label" for="gridCheck1">
+                Resturent
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" name= "outlettype3">
+                <label class="form-check-label" for="gridCheck1">
+                  Others
+                </label>
+                <input type="text" class="form-control" placeholder="Please specify" name="specify">
+              </div>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Contact person</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Owner/Manager" required name="contactperson">
+        </div>
+      </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Name" name="name" required>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Phone no.</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" placeholder="Phone no." name="phone_no" required>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Type of Cusines</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Chinese,Punjabi,Bangali,etc." name="type" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2">Services</div>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" name= "services1">
+            <label class="form-check-label" for="gridCheck1">
+             delivery
+            </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1" name= "services2">
+              <label class="form-check-label" for="gridCheck1">
+                Walk in!
+              </label>
+            </div>
+        </div>
+      </div> 
+     <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Time</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" placeholder="From" name="time_from" required>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" placeholder="To" name="time_to" required>
+          </div> 
+      </div> 
+     <!-- <div class="form-group row">
+      <label class="col-sm-2 col-form-label">upload menue image</label>
+      <div class="custom-file col-sm-5">        
+        <input type="file" class="custom-file-input " id="customFile" name="image" required>
+        <label class="custom-file-label" for="customFile">Upload menue</label>
+      </div>
+    </div>   -->
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">upload Licence image</label>
+        <div class="custom-file col-sm-5">        
+          <input type="file" class="custom-file-input " id="customFile" name="image" required>
+          <label class="custom-file-label" for="customFile">Upload Licence</label>
+        </div>
+      </div>
+    <div class="form-group row">
+       <div class="col-sm-10">
+         <button class="w3-button w3-black w3-section" type="submit">
+           <i class="fa fa-paper-plane"></i> submit
+         </button> 
+        </div>
+      </div>
+    
+  </form>
+</div>
+
+
+
+
+<%- include('partials/footer'); -%>
