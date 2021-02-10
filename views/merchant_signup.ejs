@@ -1,63 +1,66 @@
 <%- include('partials/partnerhead'); -%>
 
 <main style="background-image: url(assets/img/background/bg.png); color:rgb(255, 255, 255)">
-        <!-- Merchent section -->
-  <div class="w3-container w3-padding-32" >
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 text-center"  style="color: rgb(255, 255, 255);" >Partnership with us</h3>
-    <p style="color: whitesmoke">*Please fill the form below to add your services</p>
-  </div>
+  <!-- Merchent section -->
+<div class="w3-container w3-padding-32" >
+<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 text-center"  style="color: rgb(255, 255, 255);" >Partnership with us</h3>
+<p style="color: whitesmoke">*Please fill the form below to add your services</p>
+</div>
 
- <div class="container"> 
-  <form >
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Name" required>
-        </div>
+<div class="container"> 
+<form >
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Name</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" placeholder="Name" required>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Address</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" placeholder="Address" required>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Phone no.</label>
+  <div class="col-sm-4">
+    <input type="number" class="form-control" placeholder="Phone no." required>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Email id</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" placeholder="Email-id" required>
+  </div>
+</div>
+<div class="form-group row">
+      <label class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Password" required>
       </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Phone no.</label>
-        <div class="col-sm-6">
-          <input type="number" class="form-control" placeholder="Phone no." required>
-        </div>
+    </div>
+<div class="form-group row">
+      <label class="col-sm-2 col-form-label"> confirm Password</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Password" required>
       </div>
-      <div class="form-group row">
-        <label for="Outlet" class="col-sm-2 col-form-label">Address</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Outlet name" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="Outlet" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Outlet name" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="Outlet" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Outlet name" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="Outlet" class="col-sm-2 col-form-label">Confirm Password</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Outlet name" required>
-        </div>
-      </div>
-    <div class="form-group-row">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        </div>
-      </div>
-    <div class="form-group row" style="margin-bottom: 0px;">
-       <div class="col-sm-10">
-         <button type="button" class="btn btn-dark" type="submit" style="padding-bottom: 15px;padding-top: 15px;margin-top: 20px; margin-bottom: 20px; border-radius:26px">
-           <i class="fa fa-paper-plane"></i> submit
-         </button> 
-        </div>
-      </div>
-  </form>
+    </div>
+<div class="form-group-row">
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    I accept <a href="terms&condition.html" target="blank" style=" color:rgb(255, 254, 254)">terms and conditions</a>
+  </label>
+  </div>
+</div>
+<div class="form-group row" style="margin-bottom: 0px;">
+ <div class="col-sm-10">
+   <button type="button" class="btn btn-dark" type="submit" style="padding-bottom: 15px;padding-top: 15px;margin-top: 20px; margin-bottom: 20px; border-radius:26px">
+     <i class="fa fa-paper-plane"></i> submit
+   </button> 
+  </div>
+</div>
+</form>
 </div>
 </main>
     
@@ -101,18 +104,28 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
-        
+        <script>const signUpButton = document.getElementById('signUp');
+          const signInButton = document.getElementById('signIn');
+          const container = document.getElementById('container');
+          
+          signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+          });
+          
+          signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+          });</script>
     </body>
 </html>
 
 <script>
+  
   const form = document.querySelector('form');
-  const emailError = document.querySelector('.email.error');
   const passwordError = document.querySelector('.password.error');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     // reset errors
-    emailError.textContent='';
+    
     passwordError.textContent = '';
     // get values
     const full_name = form.full_name.value;
@@ -120,16 +133,22 @@
     const mobile_no = form.mobile_no.value;
     const password = form.password.value;
     const email = form.email.value;
+    const confirmPassword=form.confirmPassword.value;
+    // if(password!=confirmPassword)
+    // {
+    //    console.log('password didnot match');
+    // }
+  
     try {
-      const res = await fetch('/signup', { 
+      const res = await fetch('/merchant_signup', { 
         method: 'POST', 
-        body: JSON.stringify({ full_name,address,mobile_no,password, email }),
+        body: JSON.stringify({ full_name,address,mobile_no,password, email ,confirmPassword}),
         headers: {'Content-Type': 'application/json'}
       });
       const data = await res.json();
       console.log(data);
       if (data.errors) {
-        emailError.textContent= data.errors.email;
+        
         passwordError.textContent = data.errors.password;
       }
         else{

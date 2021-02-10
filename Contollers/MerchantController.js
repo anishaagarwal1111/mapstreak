@@ -89,7 +89,7 @@ module.exports.merchant_post_signup = async(req,res)=>
 
           var mailOptions = {
             from:   'divyashasinha23@gmail.com',
-            to: 'divyashasinha23@gmail.com',
+            to: 'imh10037.17@bitmesra.ac.in',
             subject:'Adding services request',
             text:'mail',
             html: output,
