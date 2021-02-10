@@ -15,7 +15,11 @@ const createToken = (id) => {
 //error handling
 const handleErrors = (err) => {
   console.log(err.message, err.code);
-  let errors = { email: '', password: ''};
+  let errors = { email: '', password: '', mobile_no: '', confirmPassword: ''};
+
+  if(err.message === "password does not match"){
+     errors.confirmPassword = "Password did not match";
+  }
 
   if (err.code === 11000) {
           errors.email = 'that email is already registered';
@@ -23,8 +27,11 @@ const handleErrors = (err) => {
   }
 
   if(err.message === "invalid Email id"){
-    errors.employe_id = "Please enter a valid Email ID";
-   
+    errors.email = "Please enter a valid Email ID";
+  }
+  
+  if(err.mobile_no === "invalid mobile number"){
+    errors.mobile_no = "please enter a valid mobile number";
   }
 
   if(err.message === "incorrect password"){
@@ -33,7 +40,7 @@ const handleErrors = (err) => {
   }
 
 
-  if (err.message.includes('user validation failed')) {
+  if (err.message.includes('Merchant validation failed')) {
     Object.values(err.errors).forEach(({ properties }) => {
       errors[properties.path] = properties.message;
     });
@@ -53,21 +60,11 @@ module.exports.merchant_post_signup = async(req,res)=>
 {
   const {full_name,address,mobile_no,email,password,confirmPassword}=req.body;
   try{
+      const check = await Merchant.check(password, confirmPassword);
        const merchant=await Merchant.create({full_name,address,email,password,mobile_no,confirmPassword});
        const token =createToken(merchant._id);
        res.cookie('jwt',token,{ httpOnly: true, maxAge: maxAge * 1000 })
-       if(merchant){
          res.status(201);
-        //  res.json({
-        //    _id:merchant._id,
-        //    full_name:merchant.full_name,
-        //    address: merchant.organisation_name,
-        //    mobile_no:merchant.mobile_no,
-        //    password:merchant.password,
-        //    confirmPassword:merchant.confirmPassword,
-        //    email:merchant.email,   
-        //  });
-
          var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -101,13 +98,9 @@ module.exports.merchant_post_signup = async(req,res)=>
               console.log('Email sent: ' + info.response);
             }
           });
-    }
-       else{
-        res.status(400);
-        throw new Error ('Invalid details');   
-       }
-
-    }
+        }
+      
+    
     catch(err)
     {
       const errors = handleErrors(err);
@@ -126,13 +119,13 @@ module.exports.merchant_get_login = async(req,res) => {
 module.exports.merchant_post_login = async (req,res) => {
     const {email, password} = req.body;
     try{
-      const Merchant = await Merchant.login(email,password);
+      const merchant = await Merchant.login(email,password);
       const token = createToken(email);
       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000});
        res.status(201).json({
-         _id : user._id,
-         password: user.password,
-         email: user.email
+         _id : merchant._id,
+         password: merchant.password,
+         email: merchant.email
        });  
       }
         catch(err){
