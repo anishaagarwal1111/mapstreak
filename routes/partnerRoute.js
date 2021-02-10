@@ -5,6 +5,7 @@ const partnercontroller = require('../Contollers/partnercontroller');
 const nodemailer = require("nodemailer");
 const Partner = require('../models/partnerModel');
 const fs = require('fs');
+var requireAuth = require('../Middleware/MerchantMiddleware');
 
 var path;
 
@@ -23,6 +24,8 @@ var Storage= multer.diskStorage({
   var upload = multer({
     storage:Storage
   }).single('image');
+
+ router.get('/partnerwithus', requireAuth, partnercontroller.partner_get);
 
 
 router.post('/partnerwithus',(req,res) => {

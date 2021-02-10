@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 const UserRoute=require('./routes/UserRoute');
 const MerchantRoute=require('./routes/MerchantRoute');
 var Merchant=require('./models/merchantModel')
-var requireAuth = require('./Middleware/MerchantMiddleware');
+
 
 
 
@@ -24,7 +24,6 @@ app.use(UserRoute);
 app.use(partnerRoute);
 app.use(MerchantRoute);
 app.set("view engine", "ejs");
-
 
 
 app.get('/', (req, res) => {
@@ -56,9 +55,7 @@ app.get('/tiffinservices', (req,res) => {
   res.json(tiffinServices);
 })
 
-app.get('/partnerwithus', requireAuth, (req,res) => {
-  res.render('joinuspartner');
-})
+
 
 
 
