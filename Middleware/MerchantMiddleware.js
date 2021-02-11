@@ -65,11 +65,11 @@ const requireAuth = asyncHandler(async (req, res, next) => {
     } catch (error) {
       console.error(error);
       res.status(401);
-      res.redirect('/merchant_login')
+      res.redirect('/merchant_signup')
     }
   if (!token) {
     res.status(401);
-    res.redirect('/merchant_login')
+    res.redirect('/merchant_signup')
   }
 });
 
