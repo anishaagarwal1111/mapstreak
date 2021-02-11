@@ -58,7 +58,7 @@ passport.use(new GoogleStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-  UserGoogle.findOrCreate({ googleId: profile.id }, function (err, user) {
+  UserGoogle.findOrCreate({ googleId: profile.id, name: profile.name.givenName + ' ' + profile.name.familyName }, function (err, user) {
     return cb(err, user);
   });
 }
@@ -68,7 +68,7 @@ passport.use(new facebookStrategy({
   clientID: process.env.FACEBOOK_ID,
   clientSecret: process.env.FACEBOOK_PASS,
   callbackURL: "http://localhost:3000/facebook/callback",
-  // profileFields: ['id', 'displayName', 'name', 'gender','picture.type(large)','email']
+  profileFields: ['id', 'displayName', 'name', 'gender','picture.type(large)','email']
 },
 function(token, refreshToken, profile, done) {
    // asynchronous

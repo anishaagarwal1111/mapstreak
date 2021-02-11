@@ -3,7 +3,7 @@ const findOrCreate=require("mongoose-findorcreate");
 const userGoogleSchema = new mongoose.Schema
 ({
     email:String,
-    password:String,
+    name: String,
     googleId:String,
     // name: String,
     // pic: String
