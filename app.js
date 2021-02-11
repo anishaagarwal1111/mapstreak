@@ -115,7 +115,7 @@ function(token, refreshToken, profile, done) {
 app.get('/auth/facebook', passport.authenticate('facebook',{scope:'email'}));
 app.get('/facebook/callback', passport.authenticate('facebook',{
   successRedirect: '/profile',
-  failureRedirect:'failed'
+  failureRedirect:'/failed'
 }))
 
 app.get('/profile',(req,res) => {
