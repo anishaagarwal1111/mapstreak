@@ -11,7 +11,11 @@ var Merchant=require('./models/merchantModel')
 const passport = require("passport");
 const facebookStrategy = require('passport-facebook').Strategy;
 const session = require('express-session');
-const UserFb = require('./models/UserFb')
+const UserFb = require('./models/UserFb');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate=require("mongoose-findorcreate");
+const UserGoogle=require('./models/UserGoogle')
+ const User =require('./models/User')
 
 
 
@@ -45,12 +49,26 @@ passport.deserializeUser(function(id, done) {
 
 });
 
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_ID,
+  clientSecret:process.env.GOOGLE_SECRET,
+  callbackURL: "http://localhost:3000/auth/google/Mapstreak",
+  profileFields: ['id', 'displayName', 'name', 'gender','picture.type(large)','email'],
+  userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"
+},
+function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
+  UserGoogle.findOrCreate({ googleId: profile.id }, function (err, user) {
+    return cb(err, user);
+  });
+}
+));
 
 passport.use(new facebookStrategy({
   clientID: process.env.FACEBOOK_ID,
   clientSecret: process.env.FACEBOOK_PASS,
   callbackURL: "http://localhost:3000/facebook/callback",
-  profileFields: ['id', 'displayName', 'name', 'gender','picture.type(large)','email']
+  // profileFields: ['id', 'displayName', 'name', 'gender','picture.type(large)','email']
 },
 function(token, refreshToken, profile, done) {
    // asynchronous
@@ -113,7 +131,16 @@ app.get('/failed',(req,res) => {
 app.get('/', (req, res) => {
   res.render('home');
 });
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile']
+ }));
 
+ app.get('/auth/google/Mapstreak', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 app.get('/aboutus',(req,res) => {
     res.render('aboutus');
 });
