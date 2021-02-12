@@ -16,6 +16,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate=require("mongoose-findorcreate");
 const UserGoogle=require('./models/UserGoogle')
  const User =require('./models/User')
+ const tiffinRoutes = require('./routes/tiffinRoutes');
 
 
 
@@ -30,6 +31,7 @@ app.use(partnerRoute);
 app.use(UserRoute);
 app.use(partnerRoute);
 app.use(MerchantRoute);
+app.use(tiffinRoutes);
 app.set("view engine", "ejs");
 
 app.use(passport.initialize());
@@ -162,9 +164,7 @@ app.get('/termsandconditions', (req,res) => {
   res.render('terms_and_conditions');
 });
 
-app.get('/tiffinservices', (req,res) => {
-  res.json(tiffinServices);
-})
+
 
 
 

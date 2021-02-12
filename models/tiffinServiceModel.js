@@ -2,10 +2,10 @@ const mongoose=require("mongoose");
 
 const tiffinSchema = new mongoose.Schema
 ({
+  _id:{
+    type:Number
+  },
 
- _id:{
-     type:Number
- },
  name:{
      type: String
  },
@@ -20,3 +20,4 @@ const tiffinSchema = new mongoose.Schema
 const Tiffin= mongoose.model('Tiffin', tiffinSchema);
 
 module.exports = Tiffin;
+
