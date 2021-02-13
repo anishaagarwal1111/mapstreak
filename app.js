@@ -18,8 +18,8 @@ const findOrCreate=require("mongoose-findorcreate");
 const UserGoogle=require('./models/UserGoogle')
  const User =require('./models/User')
  const tiffinServices= require('./data/tiffinServices');
- 
-
+ const tiffinRoutes = require('./routes/tiffinRoutes');
+ const Tiffin = require('./models/tiffinServiceModel');
 
 
 dotenv.config();
@@ -169,13 +169,12 @@ app.get('/tiffinservices',(req,res)=>{
   res.render('tiffinservices');
 });
 
-
-router.get('/autocomplete/', function(req, res, next) {
+app.get('/autocomplete/', function(req, res, next) {
 
   var regex= new RegExp(req.query["term"],'i');
  
-  var employeeFilter =empModel.find({name:regex},{'name':1}).sort({"updated_at":-1}).sort({"created_at":-1}).limit(20);
-  employeeFilter.exec(function(err,data){
+  var TiffinFilter =Tiffin.find({name:regex},{'name':1}).sort({"updated_at":-1}).sort({"created_at":-1}).limit(20);
+  TiffinFilter.exec(function(err,data){
 
 
 var result=[];
@@ -197,6 +196,8 @@ if(!err){
   });
 
 });
+
+
 
 PORT = process.env.PORT;
 
