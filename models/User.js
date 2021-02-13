@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema
 ({
     name:{
         type:String,
-        required:true
+        
     },
     email:{
         type: String,
@@ -18,17 +18,21 @@ const userSchema = new mongoose.Schema
         type: String,
         required: [true, 'Please enter a password'],
     },
+    resentToken: String,
+    expireToken: Date
     
 
 
 });
 
-//bcrypting password
+// bcrypting password
 userSchema.pre('save',async function(next){
     const salt=await bcrypt.genSalt();
     this.password=await bcrypt.hash(this.password,salt);
     next();
 });
+
+
 //static login
 userSchema.statics.login = async function(email, password){
     const user = await this.findOne({email});
