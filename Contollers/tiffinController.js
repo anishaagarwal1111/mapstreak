@@ -4,7 +4,7 @@ const Tiffin = require('../models/tiffinServiceModel');
 
 module.exports.get_tiffin  = asyncHandler(async (req, res) => {
     const tiffins = await Tiffin.find({});
-    res.json(tiffins);
+    res.render('tiffinservices');
   });
   
   module.exports.getTiffinById = asyncHandler(async (req, res) => {
