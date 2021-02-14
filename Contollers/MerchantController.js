@@ -12,7 +12,6 @@ const createToken = (id) => {
     });
 };
 //error handling
-//error handling
 const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: '', password: '', mobile_no: '', confirmPassword: ''};
@@ -22,7 +21,7 @@ const handleErrors = (err) => {
   }
 
   if (err.code === 11000) {
-          errors.email = 'that email is already registered';
+          errors.email = 'That email is already registered';
       return errors;
   }
 
@@ -31,7 +30,7 @@ const handleErrors = (err) => {
   }
   
   if(err.mobile_no === "invalid mobile number"){
-    errors.mobile_no = "please enter a valid mobile number";
+    errors.mobile_no = "Please enter a valid mobile number";
   }
 
   if(err.message === "incorrect password"){
@@ -62,7 +61,7 @@ module.exports.merchant_post_signup = async(req,res)=>
   try{
       const check = await Merchant.check(password, confirmPassword);
        const merchant=await Merchant.create({full_name,address,email,password,mobile_no,confirmPassword});
-       const token =createToken(merchant._id);
+       const token = createToken(merchant._id);
        res.cookie('jwt',token,{ httpOnly: true, maxAge: maxAge * 1000 })
          res.status(201);
          var transporter = nodemailer.createTransport({
@@ -86,7 +85,7 @@ module.exports.merchant_post_signup = async(req,res)=>
 
           var mailOptions = {
             from:   'divyashasinha23@gmail.com',
-            to: 'imh10037.17@bitmesra.ac.in',
+            to: 'divyashasinha23@gmail.com',
             subject:'Adding services request',
             text:'mail',
             html: output,
