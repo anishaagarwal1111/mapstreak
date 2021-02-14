@@ -64,42 +64,16 @@ module.exports.merchant_post_signup = async(req,res)=>
        const token = createToken(merchant._id);
        res.cookie('jwt',token,{ httpOnly: true, maxAge: maxAge * 1000 })
          res.status(201);
-         var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-              user: process.env.USER,
-              pass: process.env.PASS
-            },
-          });
-          
-          const output = `
-                <p>You have a new contact request</p>
-                <h3>Contact Details</h3>
-                <ul>  
-                  <li> Name: ${req.body.full_name}</li>
-                  <li>Address: ${req.body.address}</li>
-                  <li>Mobile Number: ${req.body.mobile_no}</li>
-                  <li>Email: ${req.body.email}</li>
-                </ul>
-              `;
-
-          var mailOptions = {
-            from:   'divyashasinha23@gmail.com',
-            to: 'divyashasinha23@gmail.com',
-            subject:'Adding services request',
-            text:'mail',
-            html: output,
-          };
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
+         res.json({
+          _id:merchant._id,
+          name:merchant.full_name,
+          password:merchant.password,
+          email:merchant.email,  
+          mobile_no:merchant.mobile_no,  
+          address:merchant.address, 
+          confirmPassword:merchant.confirmPassword, 
+        });
         }
-      
-    
     catch(err)
     {
       const errors = handleErrors(err);
