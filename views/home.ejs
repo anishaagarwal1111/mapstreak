@@ -1,44 +1,58 @@
 <%- include('partials/header'); -%>
-    <main>
+<main>
+    <div class="container w3-hide-small w3-hide-medium">
+        <div class="row ">
+            <div class="col-3  shadow p-3 mb-5 bg-white rounded" id="top-tabs">
+               <img src="assets/img/background/tiffin.png">
+               <div class="card-img-overlay"><b style="font-size: larger;font-weight:750;">TIFFINS</b><br>
+                <span style="font-size: 2em; color: rgb(0, 225, 255); padding-right: 20px;"><i class="fas fa-arrow-alt-circle-right"></i></span>
+               </div>
+            </div>
+            <div class="col-3  shadow p-3 mb-5 bg-white rounded" id="top-tabs">
+                <b style="font-size: larger;font-weight:700;">MORE <br> CATEGORY COMING SOON</b>         
+            </div>
+        </div>
 
-        <!-- slider Area Start-->
-        <div class="slider-area ">
-            <!-- Mobile Menu -->
-            <div class="slider-active">
-                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_bg.png">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-9 col-md-10">
-                                <div class="hero__caption">
-                                    <div class="row time middle" style="margin:10px">
-                                        <span style="height: 100px;width: 70px;">
-                                        <h2>
-                                          <div id="d">20</div>
-                                        </h2>
-                                          Days
-                                        
-                                        </span>
-                                        <span style="height: 100px;width: 70px;">
-                                          <h2>
-                                          <div id="h">06</div>
-                                          </h2>
-                                          Hours
-                                        </span>
-                                        <span style="height: 100px;width: 70px;">
-                                          <h2>
-                                          <div id="m">35</div>
-                                          </h2>
-                                          Minutes
-                                        </span>
-                                        <span style="height: 100px;width: 70px;">
-                                          <h2>
-                                          <div id="s">54</div></h2>
-                                          Seconds
-                                          
-                                        </span>
-                                      </div>
-                                      <script>
-                                          var comingdate = new Date("14,feb , 2021 00:00:00");
+    </div>
+
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="slider-active">
+            <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/bg.png" style="opacity: 0.2;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-9 col-md-10">
+                            <div class="hero__caption">
+                                <div class="row time middle" style="margin:10px">
+                                    <span style="height: 100px;width: 70px; color:white">
+                                    <h2>
+                                      <div id="d" style="color:white">20</div>
+                                    </h2>
+                                      Days
+                                    
+                                    </span>
+                                    <span style="height: 100px;width: 70px; color:white">
+                                      <h2>
+                                      <div id="h" style="color:white">06</div>
+                                      </h2>
+                                      Hours
+                                    </span>
+                                    <span style="height: 100px;width: 70px; color:white">
+                                      <h2>
+                                      <div id="m" style="color:white">35</div>
+                                      </h2>
+                                      Minutes
+                                    </span>
+                                    <span style="height: 100px;width: 70px; color:white">
+                                      <h2>
+                                      <div id="s" style="color:white">54</div></h2>
+                                      Seconds
+                                      
+                                    </span>
+                                  </div>
+                                  <script >
+                                      var comingdate = new Date("22,feb , 2021 00:00:00");
 
 var d = document.getElementById('d');
 var h = document.getElementById('h');
@@ -66,30 +80,41 @@ function getTrueNumber(x) {
   if (x<10) return '0'+x;
   else return x;
 }
-                                      </script>
-                                    <h1>We Are Launching Soon</h1>
-                                </div>
+
+                                  </script>
+                                <h1 style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">We Are Launching Soon</h1>
                             </div>
                         </div>
-                        <!-- Search Box -->
-                        <div class="row">
-                            <div class="col-xl-8">
-                            </div>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <!-- form -->
+                            <form action="#" class="search-box">
+                                
+                                <!-- <div class="search-form">
+                                    <a href="form.html">ADD</a>
+                                </div>	 -->
+                            </form>	
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- slider Area End-->
-        <!-- Our Services Start -->
-        
-        <!-- How  Apply Process End-->
-        <!-- Testimonial Start -->
-       
-        <!-- Testimonial End -->
-         <!-- Support Company Start-->
+    </div>
+    <div class="container" style="height: 200px;">
 
-    </main>
+    </div>
+    <!-- slider Area End-->
+    <!-- Our Services Start -->
+    
+    <!-- How  Apply Process End-->
+    <!-- Testimonial Start -->
+   
+    <!-- Testimonial End -->
+     <!-- Support Company Start-->
+
+</main>
 
     <!-- <footer> -->
 <%- include('partials/footer'); -%>
@@ -134,5 +159,3 @@ function getTrueNumber(x) {
         
     </body>
 </html>
-        
-    
