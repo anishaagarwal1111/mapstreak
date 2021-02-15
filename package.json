@@ -1,21 +1,12 @@
 {
   "name": "mapstreak",
   "version": "1.0.0",
-  "description": "Click on the below link for current preview\r https://baljitthakur.github.io/mapstreak/index.html",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BaljitThakur/mapstreak.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BaljitThakur/mapstreak/issues"
-  },
-  "homepage": "https://github.com/BaljitThakur/mapstreak#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "busboy": "^0.3.1",
