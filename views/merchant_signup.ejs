@@ -1,4 +1,4 @@
-<%- include('partials/partnerhead'); -%>
+<%- include('partials/header'); -%>
     <div class="container">
         <div class="col-12" style="padding-top:20px;"><h3 style="font-family: Georgia, 'Times New Roman', Times, serif;"><b>Partnership with us</b></h3>
         </div>
@@ -139,44 +139,88 @@
 </main>
 <%- include('partials/footer'); -%>
 
-<script>
-    const form = document.querySelector('form');
-    const emailError = document.querySelector('.email.error');
-    const confirmPasswordError = document.querySelector('.confirmPassword.error');
-    const passwordError = document.querySelector('.password.error');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      // reset errors
-      confirmPasswordError.textContent = '';
-      emailError.textContent='';
-      passwordError.textContent = '';
-      // get values
-      const full_name = form.full_name.value;
-      const address = form.address.value;
-      const mobile_no = form.mobile_no.value;
-      const email = form.email.value;
-      const password = form.password.value;
-      const confirmPassword = form.confirmPassword.value;
-      try {
-        const res = await fetch('/merchant_signup', { 
-          method: 'POST', 
-          body: JSON.stringify({full_name,address,mobile_no,email,password,confirmPassword}),
-          headers: {'Content-Type': 'application/json'}
-        });
-        const data = await res.json();
-        console.log(data);
-        if (data.errors) {
-          confirmPasswordError.textContent = data.errors.confirmPassword;
-          emailError.textContent= data.errors.email;
-          passwordError.textContent = data.errors.password;
-        }
-          else{
-          location.assign('/');
-        }
-      }
-      catch (err) {
-        console.log(err);
-      }
-    });
-  </script>
 
+    <!-- <footer> -->
+    
+      <!-- </footer> -->
+  
+    <!-- JS here -->
+    
+      <!-- All JS Custom Plugins Link Here here -->
+          <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+      <!-- Jquery, Popper, Bootstrap -->
+      <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+          <script src="./assets/js/popper.min.js"></script>
+          <script src="./assets/js/bootstrap.min.js"></script>
+        <!-- Jquery Mobile Menu -->
+          <script src="./assets/js/jquery.slicknav.min.js"></script>
+  
+      <!-- Jquery Slick , Owl-Carousel Plugins -->
+          <script src="./assets/js/owl.carousel.min.js"></script>
+          <script src="./assets/js/slick.min.js"></script>
+          <script src="./assets/js/price_rangs.js"></script>
+          
+      <!-- One Page, Animated-HeadLin -->
+          <script src="./assets/js/wow.min.js"></script>
+      <script src="./assets/js/animated.headline.js"></script>
+          <script src="./assets/js/jquery.magnific-popup.js"></script>
+  
+      <!-- Scrollup, nice-select, sticky -->
+          <script src="./assets/js/jquery.scrollUp.min.js"></script>
+          <script src="./assets/js/jquery.nice-select.min.js"></script>
+      <script src="./assets/js/jquery.sticky.js"></script>
+          
+          <!-- contact js -->
+          <script src="./assets/js/contact.js"></script>
+          <script src="./assets/js/jquery.form.js"></script>
+          <script src="./assets/js/jquery.validate.min.js"></script>
+          <script src="./assets/js/mail-script.js"></script>
+          <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+          
+      <!-- Jquery Plugins, main Jquery -->	
+          <script src="./assets/js/plugins.js"></script>
+          <script src="./assets/js/main.js"></script>
+          
+      </body>
+  </html>
+  
+<script>
+  const form = document.querySelector('form');
+  const emailError = document.querySelector('.email.error');
+  const confirmPasswordError = document.querySelector('.confirmPassword.error');
+  const passwordError = document.querySelector('.password.error');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // reset errors
+    confirmPasswordError.textContent = '';
+    emailError.textContent='';
+    passwordError.textContent = '';
+    // get values
+    const full_name = form.full_name.value;
+    const address = form.address.value;
+    const mobile_no = form.mobile_no.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+    try {
+      const res = await fetch('/merchant_signup', { 
+        method: 'POST', 
+        body: JSON.stringify({full_name,address,mobile_no,email,password,confirmPassword}),
+        headers: {'Content-Type': 'application/json'}
+      });
+      const data = await res.json();
+      console.log(data);
+      if (data.errors) {
+        confirmPasswordError.textContent = data.errors.confirmPassword;
+        emailError.textContent= data.errors.email;
+        passwordError.textContent = data.errors.password;
+      }
+        else{
+        location.assign('/partnerwithus');
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  });
+</script>

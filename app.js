@@ -162,10 +162,12 @@ app.get('/privacypolicy',(req,res) => {
 });
 
 app.get('/termsandconditions', (req,res) => {
-  res.render('terms_and_conditions');
+  res.render('terms_and_condition');
 });
 
-
+app.get('/contactus',(req,res)=>{
+  res.render('contactus');
+});
 
 app.get('/autocomplete/', function(req, res, next) {
 
