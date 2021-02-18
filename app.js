@@ -16,9 +16,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate=require("mongoose-findorcreate");
 const UserGoogle=require('./models/UserGoogle')
  const User =require('./models/User')
- const tiffinServices= require('./data/tiffinServices');
- const tiffinRoutes = require('./routes/tiffinRoutes');
- const Tiffin = require('./models/tiffinServiceModel');
+
 
 
 dotenv.config();
@@ -32,7 +30,7 @@ app.use(partnerRoute);
 app.use(UserRoute);
 app.use(partnerRoute);
 app.use(MerchantRoute);
-app.use(tiffinRoutes);
+
 app.set("view engine", "ejs");
 
 app.use(passport.initialize());
@@ -199,6 +197,6 @@ if(!err){
 
 
 
-PORT = process.env.PORT;
+PORT = process.env.PORT ||5000;
 
 app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`));
